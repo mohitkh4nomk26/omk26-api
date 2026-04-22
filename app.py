@@ -30,6 +30,10 @@ Chat_Leave = False
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "OMK26 API Running Successfully 🚀"
+    
 Hr = {
     'User-Agent': "Dalvik/2.1.0 (Linux; U; Android 11; ASUS_Z01QD Build/PI)",
     'Connection': "Keep-Alive",
@@ -593,9 +597,9 @@ async def MaiiiinE():
     global loop, key, iv, region, BOT_UID
 
     # BOT LOGIN UID
-    BOT_UID = int('14502248513')  # <-- FIXED BOT UID
+    BOT_UID = int('15464758399')  # <-- FIXED BOT UID
 
-    Uid, Pw = '4423980632', '87CA6C919562E88279FF692C8756926BB0BB0CDFE7529ED127600905C1FA9855'
+    Uid, Pw = '4737129314', 'D09F74112CB6A5D5D07F24BCD016692C0E6AFF9749D2DB3C1E7098A25D5DA937'
 
     open_id, access_token = await GeNeRaTeAccEss(Uid, Pw)
     if not open_id or not access_token:
@@ -675,4 +679,7 @@ async def StarTinG():
 
 
 if __name__ == '__main__':
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.start()
+
     asyncio.run(StarTinG())
